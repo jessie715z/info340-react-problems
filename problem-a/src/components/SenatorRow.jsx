@@ -5,3 +5,15 @@ import React from 'react'; //import React library
 // { id: 'M001111', name: 'Patty Murray', state: 'WA', party: 'Democrat', phone: '202-224-2621', twitter: 'PattyMurray' }
 
 /* Your code goes here */
+
+export function SenatorRow({ senatorData }) {
+  return (
+    <tr>
+      <td>{senatorData.name}</td>
+      <td>{senatorData.party.charAt(0)} - {senatorData.state}</td>
+      <td>
+        <a href={`tel:${senatorData.phone}`}>{senatorData.phone}</a>
+      </td>
+    </tr>
+  );
+}

@@ -6,3 +6,18 @@ const EXAMPLE_SENATORS = [
 ];
 
 /* Your code goes here */
+import { TableHeader } from './TableHeader';
+import { SenatorRow } from './SenatorRow';
+
+export function SenatorTable({ senatorsList }) {
+  return (
+    <table className="table table-bordered">
+      <TableHeader columnNames={['Name', 'State', 'Phone']} />
+      <tbody>
+        {senatorsList.map((senator) => (
+          <SenatorRow key={senator.id} senatorData={senator} />
+        ))}
+      </tbody>
+    </table>
+  );
+}
